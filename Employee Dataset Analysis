@@ -1,0 +1,18 @@
+import pandas as pd
+
+data = {
+    'EmployeeID': [1, 2, 3, 4, 5],
+    'Department': ['HR', 'IT', 'HR', 'IT', 'Sales'],
+    'Salary': [50000, 60000, 45000, 75000, 52000],
+    'JoiningDate': ['2010-01-01', '2012-05-15', '2018-07-20', '2015-09-30', '2020-06-10']
+}
+
+df = pd.DataFrame(data)
+highest_lowest = df.groupby('Department')['Salary'].agg(['max', 'min'])
+df['JoiningDate'] = pd.to_datetime(df['JoiningDate'])
+average_tenure = (pd.Timestamp.now() - df['JoiningDate']).dt.days.mean()
+joined_before = df[df['JoiningDate'] < '2015-01-01']
+
+print("Highest and Lowest Salaries in Each Department:\n", highest_lowest)
+print("Average Tenure of Employees (in days):", average_tenure)
+print("Employees Who Joined Before 2015:\n", joined_before)
