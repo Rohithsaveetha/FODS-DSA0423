@@ -1,0 +1,22 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load dataset
+df = pd.read_csv('customer_orders.csv')
+
+# Create 'Order Date' column (assuming OrderID contains date info)
+df['Order Date'] = pd.to_datetime(df['OrderID'].str.extract(r'(\d{4}-\d{2}-\d{2})')[0])
+
+# Filter data for a specific customer
+specific_customer = 'C123'
+filtered_data = df[df['CustomerID'] == specific_customer]
+
+# Group data by Customer ID and calculate total amount spent
+total_spent = df.groupby('CustomerID')['TotalPrice'].sum()
+
+# Visualize Total Price distribution using a histogram
+plt.hist(df['TotalPrice'], bins=10, color='green', alpha=0.7)
+plt.title('Distribution of Total Price')
+plt.xlabel('Total Price')
+plt.ylabel('Frequency')
+plt.show()
