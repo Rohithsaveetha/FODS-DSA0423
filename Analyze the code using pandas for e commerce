@@ -1,0 +1,13 @@
+import pandas as pd
+
+df = pd.read_csv('customer_orders.csv')
+print(df.head())
+
+total_sales = df['Total Price'].sum()
+print(f"Total Sales: {total_sales}")
+
+average_quantity = df['Quantity'].mean()
+print(f"Average Quantity Ordered: {average_quantity}")
+
+top_selling = df.groupby('Product ID')['Quantity'].sum().sort_values(ascending=False)
+print(top_selling)
