@@ -1,0 +1,32 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Sample data for product categories and sales
+data = {'Category': ['Electronics', 'Clothing', 'Home Decor', 'Books', 'Toys'],
+        'Sales': [12000, 8000, 5000, 7000, 4000]}
+
+df = pd.DataFrame(data)
+
+# Line Plot
+plt.figure(figsize=(8, 5))
+plt.plot(df['Category'], df['Sales'], marker='o')
+plt.title('Line Plot of Sales Across Categories')
+plt.xlabel('Category')
+plt.ylabel('Sales')
+plt.show()
+
+# Scatter Plot
+plt.figure(figsize=(8, 5))
+plt.scatter(df['Category'], df['Sales'], color='red')
+plt.title('Scatter Plot of Sales Across Categories')
+plt.xlabel('Category')
+plt.ylabel('Sales')
+plt.show()
+
+# Bar Plot
+plt.figure(figsize=(8, 5))
+plt.bar(df['Category'], df['Sales'], color='skyblue')
+plt.title('Bar Plot of Sales Across Categories')
+plt.xlabel('Category')
+plt.ylabel('Sales')
+plt.show()
