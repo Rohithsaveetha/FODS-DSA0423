@@ -1,0 +1,18 @@
+import matplotlib.pyplot as plt
+
+months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+sales = [1000, 1200, 1500, 1700, 2000, 2200, 2500, 2300, 2100, 1900, 1800, 1600]
+
+# Line Plot
+plt.plot(months, sales, marker='o', color='blue')
+plt.title('Monthly Sales - Line Plot')
+plt.xlabel('Month')
+plt.ylabel('Sales')
+plt.show()
+
+# Bar Plot
+plt.bar(months, sales, color='green')
+plt.title('Monthly Sales - Bar Plot')
+plt.xlabel('Month')
+plt.ylabel('Sales')
+plt.show()
