@@ -1,0 +1,25 @@
+import matplotlib.pyplot as plt
+
+days = [1, 5, 10, 15, 20, 25, 30]
+sales = [500, 800, 1200, 1500, 2000, 2300, 2500]
+
+# Line Plot
+plt.plot(days, sales, marker='o', color='blue')
+plt.title('Sales Prediction - Line Plot')
+plt.xlabel('Days')
+plt.ylabel('Sales')
+plt.show()
+
+# Scatter Plot
+plt.scatter(days, sales, color='red')
+plt.title('Sales Prediction - Scatter Plot')
+plt.xlabel('Days')
+plt.ylabel('Sales')
+plt.show()
+
+# Bar Plot
+plt.bar(days, sales, color='orange')
+plt.title('Sales Prediction - Bar Plot')
+plt.xlabel('Days')
+plt.ylabel('Sales')
+plt.show()
