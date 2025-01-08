@@ -1,0 +1,17 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Plotting a graph
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+plt.plot(x, y, label='Sine Wave')
+plt.title('Basic Plot')
+plt.xlabel('x-axis')
+plt.ylabel('y-axis')
+plt.legend()
+plt.show()
+
+# Calculating days difference using NumPy
+months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+days_difference = np.diff(months, prepend=0)
+print("Days difference between months:", days_difference)
